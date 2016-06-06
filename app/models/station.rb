@@ -1,4 +1,7 @@
+require 'will_paginate/array'
 class Station
+
+  WillPaginate.per_page = 10
 
   attr_reader :name, :access_times, :distance, :fuel_types, :city, :state, :street_address
 
@@ -21,11 +24,15 @@ class Station
       :location => params["zip"],
       :radius => params["distance"],
       :fuel_type => "ELEC,LPG",
-      :limit => "10" 
+      :limit => "10"
       })
       data[:fuel_stations].map do |station|
-      new(station)
+        new(station)
+      end
+      # binding.pry
+      # data = WillPaginate::Collection.create(params[:page], params[:per_page], data.length) do |station|
+      #   station.replace data[station.offset, station.per_page]
+      # end
     end
-  end
 
 end
