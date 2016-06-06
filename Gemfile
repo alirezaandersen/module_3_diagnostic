@@ -13,6 +13,7 @@ gem "therubyracer"
 gem "less-rails"
 gem 'faraday'
 gem 'figaro'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   gem 'byebug'
