@@ -6,7 +6,6 @@ class NrelService
   end
 
   def nearest_energy_fuel_station(params)
-    binding.pry
     json_request(@connection.get("api/alt-fuel-stations/v1/nearest.json?",params))
   end
 

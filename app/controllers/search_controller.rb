@@ -1,8 +1,7 @@
 class SearchController < ApplicationController
 
   def index
-    # binding.pry
-    @stations = Station.find_by(params[:zip])
+    @stations = Station.find_by(params)
   end
 
 end
