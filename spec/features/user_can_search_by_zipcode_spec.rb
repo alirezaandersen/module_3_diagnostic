@@ -32,12 +32,14 @@ RSpec.describe "user can search by zipcode" do
 
   scenario " returns list of closest stations within 5 miles sorted by distance and limited to electric and propane" do
 
+    visit "/"
+    
     fill_in :zip, with: "80203"
     fill_in :distance, with: "5"
     click_on "Locate"
 
     expect(page).to have_content("Name: UDR Address: 800 Acoma St Fuel types: ELEC Distance: 0.3117 miles Access times: 24 hours daily")
 
-  end 
+  end
 
 end
